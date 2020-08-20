@@ -6,8 +6,8 @@
     <description>Spelly Checker for Sketch</description>
     <language>en</language>
     <item>
-      <title>Version 1.1.504</title>
-      <enclosure url="https://github.com/spelly-io/plugin/releases/download/1.1.504/spelly.sketchplugin.zip" sparkle:version="1.1.504" type="application/octet-stream" />
+      <title>Version 1.1.506</title>
+      <enclosure url="https://github.com/spelly-io/plugin/releases/download/1.1.505/spelly.sketchplugin.zip" sparkle:version="1.1.506" type="application/octet-stream" />
     </item>
   </channel>
 </rss>
