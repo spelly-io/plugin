@@ -1,0 +1,1 @@
+var onStartup=function(e){var o,t,l=l||COScript.currentCOScript().env().scriptURL.path().stringByDeletingLastPathComponent().stringByDeletingLastPathComponent(),r=console.log||r||log;t=l,(o=Mocha.sharedRuntime()).valueForKey("SpellyTools")||o.loadFrameworkWithName_inDirectory_("SpellyTools",t)&&o.setValue_forKey_(!0,"SpellyTools")};
