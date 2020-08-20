@@ -1,0 +1,17 @@
+[user]
+	name = Dmitriy Golub
+    email = dmitriy.golub@gmail.com
+    signingkey = BEA2A26D1F14DEE4 
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+	precomposeunicode = true
+[remote "origin"]
+	url = github-dg:spelly-io/plugin.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
