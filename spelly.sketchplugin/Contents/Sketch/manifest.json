@@ -1,0 +1,73 @@
+{
+  "title": "Spelly",
+  "name": "Spelly",
+  "description": "Spelly Checker for Sketch",
+  "identifier": "com.spellychecker.spelly",
+  "author": "Spelly Team",
+  "authorEmail": "dev@spelly.io",
+  "homepage": "https://spelly.io",
+  "appcast": "https://raw.githubusercontent.com/spelly-io/plugin/master/appcast.xml",
+  "download": "https://github.com/spelly-io/plugin/releases/download/1.1.505/spelly.sketchplugin.zip",
+  "repository": "spelly-io/plugin",
+  "branch": "master",
+  "version": "1.1.505",
+  "frameworkVersion": "1.0.15",
+  "bundleVersion": 1,
+  "compatibleVersion": 3,
+  "lang": "en",
+  "icon": "build/img/logo.png",
+  "commands": [
+    {
+      "script": "SpellyTools.framework/bootstrap.js",
+      "identifier": "bootstrap",
+      "handlers": {
+        "actions": {
+          "run": "onStartup",
+          "onRun": "onStartup",
+          "Startup": "onStartup"
+        }
+      }
+    },
+    {
+      "script": "main.js",
+      "identifier": "runtime",
+      "handlers": {
+        "actions": {
+          "run": "onRun",
+          "onRun": "onRun",
+          "Startup": "onStartup",
+          "OpenDocument": "onOpenDocument",
+          "CloseDocument": "onCloseDocument",
+          "onDocumentChanged": "onDocumentChanged",
+          "TextChanged.finish": "onTextChanged",
+          "SelectionChanged.finish": "onSelectionChanged",
+          "HandleURL": "onHandleURL",
+          "Undo.finish": "onUndo",
+          "Redo.finish": "onRedo"
+        }
+      }
+    },
+    {
+      "name": "Restart",
+      "identifier": "restart",
+      "shortcut": "",
+      "script": "main.js",
+      "handler": "onRestart"
+    },
+    {
+      "name": "Run",
+      "identifier": "run",
+      "shortcut": "",
+      "script": "main.js",
+      "handler": "onRun"
+    }
+  ],
+  "menu": {
+    "title": "Spelly",
+    "items": [
+      "run",
+      "restart"
+    ]
+  },
+  "disableCocoaScriptPreprocessor": true
+}
