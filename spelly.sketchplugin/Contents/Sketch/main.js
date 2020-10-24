@@ -72340,7 +72340,7 @@ module.exports = {
    * Remote API host gateway
    * @type {string}
    */
-  API_HOST: 'https://a.web'
+  API_HOST: 'https://spelly.io'
 };
 
 
