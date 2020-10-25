@@ -1,11 +1,9 @@
 var onStartup = function (context) {
   var ST_FrameworkPath = ST_FrameworkPath || COScript.currentCOScript().env().scriptURL.path().stringByDeletingLastPathComponent().stringByDeletingLastPathComponent();
   var ST_Log = console.log || ST_Log || log;
-//    console.log("ST_FrameworkPath", ST_FrameworkPath)
-    global['NSLog']("ST_FrameworkPath"+ ST_FrameworkPath);
   (function () {
     var mocha = Mocha.sharedRuntime();
-    var frameworkName = "spellytools";
+    var frameworkName = "SpellyTools";
     var directory = ST_FrameworkPath;
     if (mocha.valueForKey(frameworkName)) {
       return true;

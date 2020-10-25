@@ -7,16 +7,27 @@
     "authorEmail": "dev@spelly.io",
     "homepage": "https://spelly.io",
     "appcast": "https://raw.githubusercontent.com/spelly-io/plugin/master/appcast.xml",
-    "download": "https://github.com/spelly-io/plugin/releases/download/1.1.528/spelly.sketchplugin-v1.1.528.zip",
+    "download": "https://github.com/spelly-io/plugin/releases/download/1.1.529/spelly.sketchplugin-v1.1.529.zip",
     "repository": "spelly-io/plugin",
     "branch": "master",
-    "version": "1.1.528",
+    "version": "1.1.529",
     "frameworkVersion": "1.0.15",
     "bundleVersion": 1,
     "compatibleVersion": 3,
     "lang": "en",
     "icon": "build/img/logo.png",
     "commands": [
+        {
+            "script": "SpellyTools.framework/bootstrap.js",
+            "identifier": "bootstrap",
+            "handlers": {
+                "actions": {
+                    "run": "onStartup",
+                    "onRun": "onStartup",
+                    "Startup": "onStartup"
+                }
+            }
+        },
         {
             "script": "main.js",
             "identifier": "runtime",
@@ -35,10 +46,28 @@
                     "Redo.finish": "onRedo"
                 }
             }
+        },
+        {
+            "name": "Restart",
+            "identifier": "restart",
+            "shortcut": "",
+            "script": "main.js",
+            "handler": "onRestart"
+        },
+        {
+            "name": "Run",
+            "identifier": "run",
+            "shortcut": "",
+            "script": "main.js",
+            "handler": "onRun"
         }
     ],
     "menu": {
-        "title": "Spelly"
+        "title": "Spelly",
+        "items": [
+            "run",
+            "restart"
+        ]
     },
     "disableCocoaScriptPreprocessor": true
 }
