@@ -77811,45 +77811,44 @@ function () {
     return _ref14.apply(this, arguments);
   };
 }();
-var onStartup =
-/*#__PURE__*/
-function () {
-  var _ref15 = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function _callee15(context) {
-    var _v;
+var onStartup = function onStartup(context) {
+  console.log("∆∆∆∆∆∆ ---- Startup"); // let onStartup = function(context) {
 
-    return regeneratorRuntime.wrap(function _callee15$(_context15) {
-      while (1) {
-        switch (_context15.prev = _context15.next) {
-          case 0:
-            _v = __webpack_require__(/*! sketch/async */ "sketch/async").version;
-            api_version.sketch = String(_v.sketch);
-            api_version.api = String(_v.api);
-            api_version.spelly = String(context.plugin.version()); // todo: refactor
+  var ST_FrameworkPath = ST_FrameworkPath || COScript.currentCOScript().env().scriptURL.path().stringByDeletingLastPathComponent().stringByDeletingLastPathComponent();
+  var ST_Log = console.log || ST_Log || log; // ST_Log('ST_FrameworkPath', ST_FrameworkPath)
 
-            Data.set('widget.view', context.plugin.urlForResourceNamed('build/widget.html'));
-            Data.set('bootscreen.view', context.plugin.urlForResourceNamed('build/bootscreen.html'));
-            Data.set('settings.view', context.plugin.urlForResourceNamed('build/settings.html'));
-            Data.set('login.view', context.plugin.urlForResourceNamed('build/login.html'));
-            Data.set('register.view', context.plugin.urlForResourceNamed('build/register.html'));
-            Data.set('settings.view', context.plugin.urlForResourceNamed('build/settings.html'));
-            Data.set('feedback.view', context.plugin.urlForResourceNamed('legacy/feedback.html'));
-            Data.set('changelog.view', context.plugin.urlForResourceNamed('legacy/changelog.html'));
-            EventLoop.emit('onStartup', context);
+  (function () {
+    var mocha = Mocha.sharedRuntime();
+    var frameworkName = 'spellytools';
 
-          case 13:
-          case "end":
-            return _context15.stop();
-        }
-      }
-    }, _callee15);
-  }));
+    if (mocha.valueForKey(frameworkName)) {
+      // ST_Log("Mocha valueForKey", mocha.valueForKey(frameworkName))
+      return true;
+    } else if (mocha.loadFrameworkWithName_inDirectory_(frameworkName, ST_FrameworkPath)) {
+      mocha.setValue_forKey_(true, frameworkName);
+      return true;
+    } else {
+      return false;
+    }
+  })(); // };
 
-  return function onStartup(_x17) {
-    return _ref15.apply(this, arguments);
-  };
-}();
+
+  var _v = __webpack_require__(/*! sketch/async */ "sketch/async").version;
+
+  api_version.sketch = String(_v.sketch);
+  api_version.api = String(_v.api);
+  api_version.spelly = String(context.plugin.version()); // todo: refactor
+
+  Data.set('widget.view', context.plugin.urlForResourceNamed('build/widget.html'));
+  Data.set('bootscreen.view', context.plugin.urlForResourceNamed('build/bootscreen.html'));
+  Data.set('settings.view', context.plugin.urlForResourceNamed('build/settings.html'));
+  Data.set('login.view', context.plugin.urlForResourceNamed('build/login.html'));
+  Data.set('register.view', context.plugin.urlForResourceNamed('build/register.html'));
+  Data.set('settings.view', context.plugin.urlForResourceNamed('build/settings.html'));
+  Data.set('feedback.view', context.plugin.urlForResourceNamed('legacy/feedback.html'));
+  Data.set('changelog.view', context.plugin.urlForResourceNamed('legacy/changelog.html'));
+  EventLoop.emit('onStartup', context);
+};
 global['NSLog']('⛔️️ [' + __threadID + '] RUNTIME EXIT');
 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/promise-polyfill/lib/index.js */ "./node_modules/promise-polyfill/lib/index.js"), __webpack_require__(/*! ./../node_modules/webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
